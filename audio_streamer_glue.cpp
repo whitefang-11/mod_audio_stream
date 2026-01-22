@@ -169,7 +169,7 @@ public:
                     m_notify(psession, EVENT_DISCONNECT, message);
                     break;
                 case CONNECT_ERROR:
-                    switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(psession), SWITCH_LOG_INFO, "connection error\n");
+                    switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(psession), SWITCH_LOG_INFO, "(%s) connection error: %s\n", m_sessionId.c_str(), message);
                     m_notify(psession, EVENT_ERROR, message);
 
                     media_bug_close(psession);
